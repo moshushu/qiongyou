@@ -1,0 +1,29 @@
+/* 清除浮动 */
+.clearfix {
+  overflow: hidden;
+}
+.clearfix::after{
+  content: '';
+  display: block;
+  clear: both;
+  overflow: hidden;
+}
+/* 定义原子类 */
+.tac {
+  /* 文本居中 */
+  text-align: center;
+}
+.center {
+  /* 页面宽度为1152px */
+  width: 1152px;
+  /* 保证整体页面居中 */
+  margin: 0 auto;
+}
+.db {
+  /* 块元素 */
+  display: block;
+}
+.dib {
+  /* 行内块元素 */
+  display: inline-block;
+}
