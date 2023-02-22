@@ -1,0 +1,73 @@
+/* 行高与高度相等，即为垂直居中 */
+/* 导航栏中的小三角下拉菜单，采用绝对定位漂浮在padding上 */
+/* 两个元素之前的间隙采用margin撑开 */
+/* 压盖：做下拉框的小三角 */
+.navigation {
+  height: 150px;
+}
+
+.navigation .top {
+  height: 32px;
+  background-color: #2a2a2a;
+  color: white;
+  line-height: 32px;
+}
+
+.navigation .top .top-left >ul >li >a {
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  height: 18px;
+}
+
+.navigation .top .top-left {
+  float: left;
+}
+
+/* 无需对ul做浮动，因为浮动的是li */
+.navigation .top .top-left > ul >li {
+  float: left;
+  margin-right: 18px;
+}
+/* 给有小三角下拉菜单的li添加样式来保证统一 */
+.navigation .top .top-left > ul >li.have-menu {
+  padding-right: 12px;
+  position: relative;
+}
+
+/* 小三角下拉菜单图标实现（采用压盖） */
+.navigation .top .top-left > ul >li.have-menu .drop-down {
+  /* 绝对定位会让元素浮动，而只有块元素才会浮动，因为绝对定位会将行内元素转为块元素 */
+  position: absolute;
+  right: 0;
+  /* 想要元素定位居中，top为50%，margin-top为负（高度的一半） */
+  top: 50%;
+  margin-top: -6px;
+  width: 12px;
+  height: 12px;
+  transition: transform .2s ease 0s;
+}
+
+.navigation .top .top-left > ul >li.have-menu:hover .drop-down {
+  transform: rotate(180deg);
+}
+
+.navigation .top .top-left > ul >li.have-menu .drop-down > b {
+  position: absolute;
+  left: 3px;
+  top: 2px;
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+
+.navigation .top .top-left > ul >li.have-menu .drop-down > i {
+  position: absolute;
+  left: 3px;
+  top: 0.5px;
+  width: 6px;
+  height: 6px;
+  background-color: #2a2a2a;
+  transform: rotate(45deg);
+}
